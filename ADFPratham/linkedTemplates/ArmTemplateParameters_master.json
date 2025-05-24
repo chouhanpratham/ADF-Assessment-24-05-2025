@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFPratham"
+		},
+		"AzureDataLakeStorageCSV_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorageCSV_properties_typeProperties_url": {
+			"value": "https://sadatapratham240525.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage388_properties_privateLinkResourceId": {
+			"value": "/subscriptions/e84d8697-ef3e-4296-9629-cdeb0c1df544/resourceGroups/rg-dataplatform-assessment/providers/Microsoft.Storage/storageAccounts/sadatapratham240525"
+		},
+		"AzureDataLakeStorage388_properties_groupId": {
+			"value": "dfs"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

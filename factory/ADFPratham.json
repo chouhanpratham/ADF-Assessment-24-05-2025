@@ -1,0 +1,9 @@
+{
+	"name": "ADFPratham",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5d25fb48-0af3-40c5-a4ec-446fb7e79ad6",
+		"tenantId": "5540d248-272b-417f-989d-4df3e5869370"
+	}
+}

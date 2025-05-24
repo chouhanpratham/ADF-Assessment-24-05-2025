@@ -1,0 +1,7 @@
+{
+	"name": "AzureDataLakeStorage388",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/e84d8697-ef3e-4296-9629-cdeb0c1df544/resourceGroups/rg-dataplatform-assessment/providers/Microsoft.Storage/storageAccounts/sadatapratham240525",
+		"groupId": "dfs"
+	}
+}

@@ -1,0 +1,60 @@
+{
+	"name": "dataflowADFPratham",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "PrathamDataCSV",
+						"type": "DatasetReference"
+					},
+					"name": "datasource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "PrathamSinkCSV",
+						"type": "DatasetReference"
+					},
+					"name": "sinkPrathamUTC"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumnUTC"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          SaleID as string,",
+				"          CustomerID as string,",
+				"          ProductName as string,",
+				"          Quantity as string,",
+				"          SaleAmount as string,",
+				"          SaleDate as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> datasource",
+				"datasource derive(ingestDate = currentUTC()) ~> derivedColumnUTC",
+				"derivedColumnUTC sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          SaleID as string,",
+				"          CustomerID as string,",
+				"          ProductName as string,",
+				"          Quantity as string,",
+				"          SaleAmount as string,",
+				"          SaleDate as string",
+				"     ),",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sinkPrathamUTC"
+			]
+		}
+	}
+}
